@@ -17,7 +17,7 @@ public class StepDefinitions {
 
 	private WebDriver driver;
 	private int int2;
-	
+	//sad
 		@Before
 		public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Svens\\OneDrive\\Desktop\\Selenium\\chromedriver.exe");
@@ -34,14 +34,21 @@ public class StepDefinitions {
 		    num.sendKeys(String.valueOf(int1));
 		    num.sendKeys(Keys.ENTER);
 		    Thread.sleep(1000);
+		    num.clear();
+		    Thread.sleep(1000);
+		    
 		}
 		@Given("I have also entered {int} into the calculator")
 		public void i_have_also_entered_into_the_calculator(Integer int2) throws InterruptedException {
 			
+			
 			Thread.sleep(1000);
-			WebElement num = driver.findElement(By.name("n02"));
-			num.sendKeys(String.valueOf(int2));
-			num.sendKeys(Keys.ENTER);
+			WebElement num2 = driver.findElement(By.name("n02"));
+			WebElement num1 = driver.findElement(By.name("n01"));
+			num1.sendKeys(String.valueOf(int2));
+			num1.sendKeys(Keys.ENTER);
+			num2.sendKeys(String.valueOf(int2));
+			num2.sendKeys(Keys.ENTER);
 			Thread.sleep(1000);
 			
 		}
